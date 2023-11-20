@@ -5,7 +5,7 @@ from pygame.locals import *
 from enums.COLORS import *
 from components.board import Board
 
-BOARDSIZE = 3
+BOARDSIZE = 5
 FPS = 60
 SCREENWIDTH = 600
 
@@ -33,6 +33,9 @@ class Game():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_r:
+                    raise ConnectionResetError
             elif event.type == pygame.MOUSEBUTTONDOWN and self.game_over == False:
                 pos = pygame.mouse.get_pos()
                 
@@ -64,6 +67,9 @@ while __name__ == "__main__":
     game = Game()
     
     while True:
-        game.process_input()
-        game.update()
-        game.render()
+        try:
+            game.process_input()
+            game.update()
+            game.render()
+        except ConnectionResetError:
+            game = Game()
