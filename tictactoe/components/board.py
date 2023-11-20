@@ -125,6 +125,13 @@ class Board:
             cell.render(surface)
             
         if self.game_over:
-            font = pygame.font.Font(None, 36)
+            font = pygame.font.Font(None, 166)
+            if self.winner == 1:
+                self.winner = "X"
+            else:
+                self.winner = "O"
+                
             text = font.render(f"{self.winner} Wins!", True, RED)
-            surface.blit(text, (100, 100))
+            text_width, text_height = text.get_size()
+            
+            surface.blit(text, ((self.SCREENSIZE - text_width) // 2, (self.SCREENSIZE - text_height) // 2))
