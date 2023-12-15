@@ -5,7 +5,7 @@ from pygame.locals import *
 from enums.COLORS import *
 from components.board import Board
 
-BOARDSIZE = 5
+BOARDSIZE = 3
 FPS = 60
 SCREENWIDTH = 600
 
@@ -62,14 +62,24 @@ class Game():
         self.board.render(self.DISPLAYSURF)
         pygame.display.update()
 
+    def process_gps_input(self, cell):
+        if not self.current_player_x:
+            # Cell should be passed in by the one that corresponds to the name in BOARDTILES.py
+            self.cells_to_update.append((cell))
+            return True
+
+        return False
+    
+    def game_loop(self):
+        game.process_input()
+        game.update()
+        game.render()
 
 while __name__ == "__main__":
     game = Game()
     
     while True:
         try:
-            game.process_input()
-            game.update()
-            game.render()
+            game.game_loop()
         except ConnectionResetError:
             game = Game()
