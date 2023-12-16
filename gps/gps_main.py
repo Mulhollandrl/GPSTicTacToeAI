@@ -1,6 +1,8 @@
 from gps.components.gps import GPS
 from gps.components.step import Step
+from gps.enums.BOARDTILES import NAME_TO_TILES
 import json
+import random
 
 class GPS_Player:
     def __init__(self) -> None:
@@ -22,6 +24,12 @@ class GPS_Player:
     def get_current_step_name(self):
         self.check_step_paths_valid()
         self.choose_step_path()
+        
+        if not self.gps.all_step_paths:
+            valid_cell_steps = [key for key, value in NAME_TO_TILES.items() if key not in self.invalid_steps]
+            
+            return random.choice(valid_cell_steps)
+            
         return self.gps.get_current_step_name()
 
     def increment_step(self):

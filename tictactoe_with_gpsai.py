@@ -18,9 +18,13 @@ if __name__ == "__main__":
     ai_player = GPS_Player()
 
     while True:
+        if game.reset:
+            game = Game()
+            ai_player = GPS_Player()
+        
         game.game_loop()
         
-        if not game.current_player_x:
+        if not game.current_player_x and not game.game_over:
             ai_player.invalid_steps = check_for_invalid_steps(game)
             ai_player.check_step_paths_valid()
             ai_player.choose_step_path()

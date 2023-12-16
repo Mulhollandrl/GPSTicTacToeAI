@@ -66,6 +66,9 @@ class GPS:
     
     def increment_step(self):
         if not self.current_step_index == len(self.step_path) - 1:
+            if not self.step_path:
+                return True
+                
             self.step_path.remove(self.step_path[0])
             # self.current_step_index += 1
             return True

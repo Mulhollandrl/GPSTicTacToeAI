@@ -16,6 +16,7 @@ class Game():
         self.cells_to_update = []
         self.current_player_x = True
         self.game_over = False
+        self.reset = False
         
         pygame.init()
         pygame.display.set_caption("Tic Tac Toe")
@@ -35,7 +36,7 @@ class Game():
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_r:
-                    raise ConnectionResetError
+                    self.reset = True
             elif event.type == pygame.MOUSEBUTTONDOWN and self.game_over == False:
                 pos = pygame.mouse.get_pos()
                 
@@ -53,6 +54,11 @@ class Game():
             self.current_player_x = not self.current_player_x
             print()
         elif success == 2:
+            self.game_over = True
+            
+        empty_cells = [cell for cell in self.board.cells if cell.state == state.STATEEMPTY]
+        
+        if not empty_cells:
             self.game_over = True
             
         self.cells_to_update = []
@@ -79,7 +85,7 @@ while __name__ == "__main__":
     game = Game()
     
     while True:
-        try:
-            game.game_loop()
-        except ConnectionResetError:
+        game.game_loop()
+        
+        if game.reset:
             game = Game()

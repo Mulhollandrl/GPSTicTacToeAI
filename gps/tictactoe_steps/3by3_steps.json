@@ -14,7 +14,7 @@
         {"name": "win_middle_row", "preconds": ["o_middle_left", "o_middle_middle", "o_middle_right"], "add_list": ["win"], "del_list": []},
         {"name": "win_bottom_row", "preconds": ["o_bottom_left", "o_bottom_middle", "o_bottom_right"], "add_list": ["win"], "del_list": []},
         {"name": "win_left_col", "preconds": ["o_top_left", "o_middle_left", "o_bottom_left"], "add_list": ["win"], "del_list": []},
-        {"name": "win_middle_col", "preconds": ["o_top_middle", "o_middle_middle", "o_middle_left"], "add_list": ["win"], "del_list": []},
+        {"name": "win_middle_col", "preconds": ["o_top_middle", "o_middle_middle", "o_bottom_middle"], "add_list": ["win"], "del_list": []},
         {"name": "win_right_col", "preconds": ["o_top_right", "o_middle_right", "o_bottom_right"], "add_list": ["win"], "del_list": []},
         {"name": "win_left_diag", "preconds": ["o_top_left", "o_middle_middle", "o_bottom_right"], "add_list": ["win"], "del_list": []},
         {"name": "win_right_diag", "preconds": ["o_top_right", "o_middle_middle", "o_bottom_left"], "add_list": ["win"], "del_list": []}
