@@ -65,7 +65,7 @@ class Game():
     def process_gps_input(self, cell):
         if not self.current_player_x:
             # Cell should be passed in by the one that corresponds to the name in BOARDTILES.py
-            self.cells_to_update.append((cell))
+            self.cells_to_update.append((cell, state.STATEO))
             return True
 
         return False

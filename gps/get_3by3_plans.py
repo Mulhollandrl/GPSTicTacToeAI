@@ -1,6 +1,6 @@
 import json
-from components.gps import GPS
-from components.step import Step
+from gps.components.gps import GPS
+from gps.components.step import Step
 
 if __name__ == "__main__":
     with open('gps/tictactoe_steps/3by3_steps.json', 'r') as step_file:
