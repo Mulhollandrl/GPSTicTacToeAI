@@ -54,3 +54,13 @@ class GPS:
     
     def get_preconds_for_step(self):
         return self.step_path[self.current_step_index]["preconds"]
+    
+    def get_current_step_name(self):
+        return self.step_path[self.current_step_index]["name"]
+    
+    def increment_step(self):
+        if not self.current_step_index == len(self.step_path):
+            self.current_step_index += 1
+            return True
+        else:
+            return False

@@ -1,7 +1,7 @@
 import pygame
-import enums.STATES as state
-from components.cell import Cell
-from enums.COLORS import *
+import tictactoe.enums.STATES as state
+from tictactoe.components.cell import Cell
+from tictactoe.enums.COLORS import *
 
 class Board:
     def __init__(self, BOARDSIZE, SCREENSIZE) -> None:

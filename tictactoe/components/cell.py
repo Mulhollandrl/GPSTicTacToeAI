@@ -1,6 +1,6 @@
 import pygame
-import enums.STATES as state
-from enums.COLORS import *
+import tictactoe.enums.STATES as state
+from tictactoe.enums.COLORS import *
 
 LINEWIDTH = 8
 

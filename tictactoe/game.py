@@ -1,9 +1,9 @@
 import sys
 import pygame
-import enums.STATES as state
+import tictactoe.enums.STATES as state
 from pygame.locals import *
-from enums.COLORS import *
-from components.board import Board
+from tictactoe.enums.COLORS import *
+from tictactoe.components.board import Board
 
 BOARDSIZE = 3
 FPS = 60
@@ -71,9 +71,9 @@ class Game():
         return False
     
     def game_loop(self):
-        game.process_input()
-        game.update()
-        game.render()
+        self.process_input()
+        self.update()
+        self.render()
 
 while __name__ == "__main__":
     game = Game()

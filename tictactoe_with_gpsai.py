@@ -10,4 +10,5 @@ if __name__ == "__main__":
         game.game_loop()
         
         if not game.current_player_x:
+            ai_player.choose_step_path()
             game.process_gps_input(NAME_TO_TILES[ai_player.get_current_step_name()])
