@@ -18,6 +18,12 @@ This will download all of the dependencies for you (except Python 3.12).
 
 Now run "*game.py*" in the "*tictactoe*" folder to play Tic Tac Toe.
 
+## Video
+
+There is a video going over the Game as well as the code [here](https://youtu.be/Vp3YCs2kCrg).
+
+The first 4.5 minutes are spent on the overview of the game, and the rest is spent on the code.
+
 ## Notes on Implementation
 
 Unfortunately, I ran into a few problems trying to get GPS to work with Tic Tac Toe, so it is not a pure GPS implementation, even if it does get pretty close!
